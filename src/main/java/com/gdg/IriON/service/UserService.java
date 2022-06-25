@@ -7,10 +7,12 @@ import com.gdg.IriON.entity.user.UserRole;
 import com.gdg.IriON.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
 @RequiredArgsConstructor
+@Transactional
 @Service
 public class UserService {
 
