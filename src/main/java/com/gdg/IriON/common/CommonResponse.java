@@ -1,7 +1,9 @@
 package com.gdg.IriON.common;
 
 import lombok.Builder;
+import lombok.Getter;
 
+@Getter
 @Builder
 public class CommonResponse <T>{
 
