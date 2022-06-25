@@ -3,6 +3,7 @@ package com.gdg.IriON.entity.follow;
 import com.gdg.IriON.entity.animal.AnimalEntity;
 import com.gdg.IriON.entity.user.UserEntity;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -24,5 +25,17 @@ public class FollowEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private AnimalEntity animalEntity;
 
-    private int follow;
+    private Boolean follow;
+
+    @Builder
+    public FollowEntity(Long id, UserEntity userEntity, AnimalEntity animalEntity, Boolean follow) {
+        this.id = id;
+        this.userEntity = userEntity;
+        this.animalEntity = animalEntity;
+        this.follow = follow;
+    }
+
+    public void changeFollow() {
+        this.follow = false;
+    }
 }
