@@ -17,6 +17,9 @@ public class AnimalEntity {
 
     private String name;
 
+    @Column(name = "animal_image_url")
+    private String animalImageUrl;
+
     @Enumerated(value = EnumType.STRING)
     private AnimalType type;
 

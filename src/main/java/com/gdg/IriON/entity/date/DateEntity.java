@@ -3,6 +3,7 @@ package com.gdg.IriON.entity.date;
 import com.gdg.IriON.entity.animal.AnimalEntity;
 import com.gdg.IriON.entity.user.UserEntity;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -34,4 +35,14 @@ public class DateEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private AnimalEntity animalEntity;
 
+    @Builder
+    public DateEntity(Long id, LocalDateTime requestDate, String content, String rejection, Boolean isDated, UserEntity userEntity, AnimalEntity animalEntity) {
+        this.id = id;
+        this.requestDate = requestDate;
+        this.content = content;
+        this.rejection = rejection;
+        this.isDated = isDated;
+        this.userEntity = userEntity;
+        this.animalEntity = animalEntity;
+    }
 }
